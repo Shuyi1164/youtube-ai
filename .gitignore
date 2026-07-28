@@ -1,7 +1,12 @@
 .*/
 .*.json
+.*.yml
+!.github/
+!.github/**
 *.md
 !README.md
+!docs/
+!docs/**
 __pycache__/
 *.pyc
 data/

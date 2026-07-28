@@ -1,0 +1,44 @@
+site_name: YTAI Documentation
+site_description: Python YouTube SDK, CLI, and MCP server without user-supplied API keys.
+site_url: https://vibheksoni.github.io/youtube-ai/
+repo_url: https://github.com/vibheksoni/youtube-ai
+repo_name: vibheksoni/youtube-ai
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  palette:
+    - scheme: default
+      primary: red
+      accent: red
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: red
+      accent: red
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  icon:
+    repo: fontawesome/brands/github
+
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - API Reference: api-reference.md
+  - CLI Reference: cli-reference.md
+  - MCP Server: mcp-server.md
+  - FastAPI Server: api-server.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences

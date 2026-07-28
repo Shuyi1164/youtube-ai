@@ -1,14 +1,20 @@
-# YTAI: Python YouTube SDK, CLI and MCP Server
+<div align="center">
 
-![YTAI - Python YouTube SDK, CLI and MCP Server](https://github.com/vibheksoni/youtube-ai/raw/main/assets/YTAI.png)
+<img src="https://github.com/vibheksoni/youtube-ai/raw/main/assets/YTAI.png" alt="YTAI" width="320">
 
-YTAI is a Python SDK, command-line interface, and MCP server for YouTube
-search, metadata, transcripts, comments, channels, and media downloads without a
-user-supplied YouTube Data API key.
+# YTAI: Python YouTube SDK, CLI & MCP Server
 
-It uses YouTube's public InnerTube interface through `curl_cffi` browser
-impersonation, dynamically refreshes web-client configuration, and caches public
-responses locally with SQLite and `orjson`.
+Search, metadata, transcripts, comments, channels, and downloads — no API key required.
+
+[![PyPI](https://img.shields.io/pypi/v/youtube-ai?color=blue&label=PyPI)](https://pypi.org/project/youtube-ai/)
+[![Python](https://img.shields.io/pypi/pyversions/youtube-ai?color=green)](https://pypi.org/project/youtube-ai/)
+[![License](https://img.shields.io/github/license/vibheksoni/youtube-ai?color=blue)](LICENSE)
+[![Stars](https://img.shields.io/github/stars/vibheksoni/youtube-ai?style=social)](https://github.com/vibheksoni/youtube-ai)
+[![Downloads](https://img.shields.io/pypi/dm/youtube-ai?color=blue)](https://pypi.org/project/youtube-ai/)
+
+`curl_cffi` for TLS impersonation · `FastMCP` for agent tools · `FastAPI` for HTTP API · `Rich` for CLI
+
+</div>
 
 > YTAI is an independent project. It is not affiliated with or endorsed by
 > YouTube or Google. Use it in accordance with applicable terms, copyright law,
@@ -25,6 +31,7 @@ responses locally with SQLite and `orjson`.
 - [Documentation](#documentation)
 - [Testing](#testing)
 - [Limitations](#limitations)
+- [Credits](#credits)
 
 ## Features
 
