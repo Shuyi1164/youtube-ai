@@ -7,6 +7,7 @@
 !README.md
 !docs/
 !docs/**
+!SECURITY.md
 __pycache__/
 *.pyc
 data/
